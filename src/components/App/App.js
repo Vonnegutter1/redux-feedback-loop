@@ -6,15 +6,14 @@ import {HashRouter as Router, Route} from 'react-router-dom';
 //Routes Listed Below
 
 import Comments from '../Routes/Comments/Comments';
+import Submission from '../Routes/Submission/Submission'; 
+import Feelings from '../Routes/Feelings/Feelings';
+import Understanding from '../Routes/Understanding/Understanding';
+import Supported from '../Routes/Supported/Supported';
 
 
 // App Component with routes included below
 class App extends Component {
-
-  startSurvey = () => {
-    console.log("started survey")
-    
-  }
 
   render() {
     return (
@@ -25,11 +24,17 @@ class App extends Component {
           
         </header>
         <br/>
-        <button onClick={(event) => this.startSurvery()}>Start Survey</button>
+        {/* <button onClick={(event) => this.startSurvery()}>Start Survey</button> */}
         <br/>
         <div>
         <Router>
           <Route path="/Comments" component={Comments} />
+          <Route path="/Submission" component={Submission} />
+          <Route path="/Feelings" component={Feelings} />
+          <Route path="/Understanding" component={Understanding} />
+          <Route path="/Supported" component={Supported} />
+            
+   
         </Router>
        
         </div>  

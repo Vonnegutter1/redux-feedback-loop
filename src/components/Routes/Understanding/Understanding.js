@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 // import { HashRouter as Router, Route } from 'react-router-dom';
 
-class Submission extends Component {
+class Understanding extends Component {
 
 
 
     render() {
         return (
             <>
-                <h4>Submission Page</h4>
+                <h4>Understanding</h4>
 
 
             </>
@@ -16,4 +16,4 @@ class Submission extends Component {
     }
 }
 
-export default Submission;
+export default Understanding;
