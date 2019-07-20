@@ -5,24 +5,24 @@ import Review from '../Review/Review';
 
 class Feelings extends Component {
 
-captureFeelings = () => {
-    console.log('capture feelings')
-}
-
 state = {
 
+}
+
+nextPage = () => {
+    this.props.history.push('/understanding');
 }
 
     render() {
         return (
             <>
-                <h1>How are you feeling today?</h1>
+                <h2>How are you feeling today?</h2>
 
                 <h4>Feeling?</h4>
                 <input type="number"></input>
 
 
-                <button onClick={(event) => this.captureFeelings()}>Next</button>
+                <button onClick={this.nextPage}>Next</button>
                 <Review />
                 </>
 

@@ -6,12 +6,24 @@ class Review extends Component {
     render() {
         return (
             <>
-                <h1>Review Your Feedback</h1>
+                <h2>Review Your Feedback</h2>
+                <section>
 
-                <h3>Feelings: </h3>
-                <h3>Understanding: </h3>
-                <h3>Support: </h3>
-                <h3>Comments: </h3>
+                <form>
+                    <div>
+                <p>Feelings: </p>
+                <p>Understanding: </p>
+                <p>Support: </p>
+                <p>Comments: </p>
+                        </div>
+                </form>
+                    
+                    {/* {this.props.reduxStore.feedbackReducer.map(item =>{
+                        return(<ul><key={item.id}> 
+                        <li>Feelings: {item.feelings}</li>
+                        </ul>)
+                    )} */}
+                </section>
                 
                 {/* <button>INCOMPLETE</button> */}
 

@@ -10,10 +10,15 @@ import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
 
-const reduxStore = createStore(
-    combineReducers({
 
-    }),
+// const feedbackReducer = (state =[], action) => {
+
+// }
+
+const reduxStore = createStore(
+//     combineReducers({
+//         feedbackReducer
+//     }),
     applyMiddleware(logger)
 )
 
