@@ -11,14 +11,15 @@ import { Provider } from 'react-redux';
 
 
 const feedback = [{
-    feelings: '',
-    understanding: '',
-    supported: '',
-    comments: '',
+    feelings: 1,
+    understanding: 2,
+    supported: 3,
+    comments: 'No',
 }]
 
-const feedbackReducer = (state =[], action) => {
+const feedbackReducer = (state = feedback, action) => {
 
+    return state;
 }
 
 const reduxStore = createStore(
@@ -27,8 +28,6 @@ const reduxStore = createStore(
     }),
     applyMiddleware(logger)
 )
-
-
 
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

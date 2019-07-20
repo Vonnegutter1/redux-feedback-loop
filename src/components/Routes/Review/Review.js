@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { HashRouter as Router, Route } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 
 class Review extends Component {
     nextPage = () => {
@@ -31,4 +31,8 @@ class Review extends Component {
     }
 }
 
-export default Review;
+const putReduxStateOnProps = (reduxStore) => ({
+    reduxStore
+}) 
+
+export default connect(putReduxStateOnProps)(Review);
