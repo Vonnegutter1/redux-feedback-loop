@@ -4,6 +4,9 @@ import Review from '../Review/Review';
 
 class Comments extends Component {
 
+    nextPage = () => {
+        this.props.history.push('/Review');
+    }
   
 
     render() {
@@ -11,8 +14,8 @@ class Comments extends Component {
            <>
                 <h2>Any comments you want to leave?</h2>
                 <input type="text" placeholder="Enter Comments"></input>
-                
-                <button onClick={(event) => this.captureSupported()}>Next</button>
+
+                <button onClick={this.nextPage}>Next</button>
                 <Review />
                 
                 </>

@@ -3,12 +3,20 @@ import React, { Component } from 'react';
 
 class Submission extends Component {
 
-
+    nextPage = () => {
+        this.props.history.push('/Feelings');
+    }
 
     render() {
         return (
             <>
-                <h4>Submission Page</h4>
+                <h2>Feedback!</h2>
+                <br/>
+
+                <h2>Thank You!</h2>
+
+                <button onClick={this.nextPage}>Leave New Feedback</button>
+
 
 
             </>
