@@ -11,14 +11,16 @@ import { Provider } from 'react-redux';
 
 
 const feedback = [{
-    feelings: 1,
-    understanding: 2,
-    supported: 3,
-    comments: 'No',
+    feelings: 0,
+    understanding: 0,
+    supported: 0,
+    comments: '',
 }]
 
 const feedbackReducer = (state = feedback, action) => {
-
+    if(action.type === 'UPDATE_FEELINGS'){
+        return [...state, action.payload];
+    }
     return state;
 }
 

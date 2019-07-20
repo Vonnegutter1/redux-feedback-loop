@@ -12,16 +12,16 @@ class Understanding extends Component {
     render() {
         return (
             <>
-
+            <form>
                 <h2>How well are you understanding the content?</h2>
                 <h4>Understanding?</h4>
                 
-                <input type="number"></input>
+                <input type="number" onChange={(event) => this.handleChangeFor('feeling', event)} />
 
 
                 <button onClick={this.nextPage}>Next</button>
                 <Review />
-
+                </form>
 
             </>
         )
