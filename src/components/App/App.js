@@ -10,7 +10,7 @@ import Submission from '../Routes/Submission/Submission';
 import Feelings from '../Routes/Feelings/Feelings';
 import Understanding from '../Routes/Understanding/Understanding';
 import Supported from '../Routes/Supported/Supported';
-
+import Review from '../Routes/Review/Review';
 
 // App Component with routes included below
 class App extends Component {
@@ -33,6 +33,7 @@ class App extends Component {
           <Route path="/Feelings" component={Feelings} />
           <Route path="/Understanding" component={Understanding} />
           <Route path="/Supported" component={Supported} />
+          <Route path="/Review" component={Review} />
             
    
         </Router>
