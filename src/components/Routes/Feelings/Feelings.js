@@ -48,7 +48,4 @@ class Feelings extends Component {
 
 }
 
-
-
-
 export default connect()(Feelings);

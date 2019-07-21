@@ -19,15 +19,14 @@ class Feedback extends Component {
     render() {
         return (
             <>
-                <h1>Review your Feedback </h1>
-                <h2>Feelings: {this.props.reduxStore.feelingsReducer.feelings} </h2>
-                <h2>Understanding: {this.props.reduxStore.understandingReducer.understanding}</h2>
-                <h2>Support: {this.props.reduxStore.supportReducer.support} </h2>
-                <h2>Comments: {this.props.reduxStore.commentReducer.comment}</h2>
+                <h2>Review your Feedback: </h2>
+                <h3>Feelings: {this.props.reduxStore.feelingsReducer.feelings} </h3>
+                <h3>Understanding: {this.props.reduxStore.understandingReducer.understanding}</h3>
+                <h3>Support: {this.props.reduxStore.supportReducer.support} </h3>
+                <h3>Comments: {this.props.reduxStore.commentReducer.comment}</h3>
             </>
         )
     }
-
 }
 
 
