@@ -25,7 +25,7 @@ class Support extends Component {
         return (
             
             <div>
-                <p>How are feeling supported?</p>
+                <p>How well are you being supported?</p>
                 <input type="radio" name="feedback" value="1"
                     onChange={(event) => this.handleChangeFor('support', event)} />1
                 <br />
@@ -48,8 +48,6 @@ class Support extends Component {
     }
 
 }
-
-
 
 
 export default connect()(Support);

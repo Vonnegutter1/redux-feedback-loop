@@ -25,7 +25,7 @@ class Feelings extends Component {
     render() {
         return (
             <div>
-                <p>How are you feeling? 1 being terrible; 5 being fantastic.</p>
+                <p>How are you feeling today?</p>
                 <input type="radio" name="feedback" value="1"
                     onChange={(event) => this.handleChangeFor('feelings', event)} />1
                 <br />

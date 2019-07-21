@@ -26,7 +26,8 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                <p>Care to share any comments?</p>
+                <p>Any comments you want to leave?</p>
+                <p>Comments? </p>
                 <input required type="text" size="35" placeholder="Please enter a comment"
                     onChange={(event) => this.handleChangeFor('comment', event)}></input>
                 <button onClick={this.handleSubmit}>Submit comment</button>

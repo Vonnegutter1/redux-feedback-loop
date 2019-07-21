@@ -24,7 +24,7 @@ class Understanding extends Component {
     render() {
         return (
             <div>
-                <p>How are you feeling? 1 being terrible; 5 being fantastic.</p>
+                <p>How well are you understanding the content?</p>
                 <input type="radio" name="feedback" value="1"
                     onChange={(event) => this.handleChangeFor('understanding', event)} />1
                 <br />
