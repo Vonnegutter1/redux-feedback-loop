@@ -16,9 +16,6 @@ class Submission extends Component {
                 <h2>Thank You!</h2>
 
                 <button onClick={this.nextPage}>Leave New Feedback</button>
-
-
-
             </>
         )
     }

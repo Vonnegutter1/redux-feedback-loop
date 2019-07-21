@@ -1,47 +1,41 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux'
 import './App.css';
-import {HashRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import Feelings from '../Routes/Feelings/Feelings.js'
+import Feedback from '../Routes/Feedback/Feedback'
+import Understanding from '../Routes/Understanding/Understanding'
+import Support from '../Routes/Support/Support'
+import Comments from '../Routes/Comments/Comments'
 
-//Routes Listed Below
-
-import Comments from '../Routes/Comments/Comments';
-import Submission from '../Routes/Submission/Submission'; 
-import Feelings from '../Routes/Feelings/Feelings';
-import Understanding from '../Routes/Understanding/Understanding';
-import Supported from '../Routes/Supported/Supported';
-import Review from '../Routes/Review/Review';
-
-// App Component with routes included below
 class App extends Component {
-
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
-          
-        </header>
-        <br/>
-        {/* <button onClick={(event) => this.startSurvery()}>Start Survey</button> */}
-        <br/>
-        <div>
+      <>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Feedback!</h1>
+            <h4><i>Don't forget it!</i></h4>
+          </header>
+        </div>
         <Router>
-          <Route path="/Comments" component={Comments} />
-          <Route path="/Submission" component={Submission} />
-          <Route path="/Feelings" component={Feelings} />
-          <Route path="/Understanding" component={Understanding} />
-          <Route path="/Supported" component={Supported} />
-          <Route path="/Review" component={Review} />
-            
-   
+
+          <Route exact path='/' component={Feelings} />
+          <Route path='/understanding' component={Understanding} />
+          <Route path='/support' component={Support} />
+          <Route path='/comments' component={Comments} />
+          <Route path='/feedback' component={Feedback} />
         </Router>
-       
-        </div>  
-      </div>
+        <br />
+        <hr />
+        <Feedback />
+
+      </>
     );
   }
 }
+const mapStateToProps = (reduxStore) => ({
+  reduxStore
+})
 
-export default App;
+export default connect(mapStateToProps)(App);

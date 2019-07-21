@@ -2,34 +2,51 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
-import registerServiceWorker from './registerServiceWorker';
 
-// Redux
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
+const feelingsReducer = (state = {}, action) => {
+    console.log('In feelingsReducer');
+    if (action.type === 'SET_FEELINGS') {
+        return action.payload;
+    }
+    return state;
+}
 
-const feedback = [{
-    feelings: 0,
-    understanding: 0,
-    supported: 0,
-    comments: '',
-}]
+const understandingReducer = (state = {}, action) => {
+    console.log('In understandingReducer');
+    if (action.type === 'SET_UNDERSTANDING') {
+        return action.payload;
+    }
+    return state;
+}
 
-const feedbackReducer = (state = feedback, action) => {
-    if(action.type === 'UPDATE_FEELINGS'){
-        return [...state, action.payload];
+const supportReducer = (state = {}, action) => {
+    console.log('In supportReducer');
+    if (action.type === 'SET_SUPPORT') {
+        return action.payload;
+    }
+    return state;
+}
+
+const commentReducer = (state = {}, action) => {
+    console.log('In commentReducer');
+    if (action.type === 'SET_COMMENT') {
+        return action.payload;
     }
     return state;
 }
 
 const reduxStore = createStore(
     combineReducers({
-        feedbackReducer
+        feelingsReducer,
+        understandingReducer,
+        supportReducer,
+        commentReducer,
     }),
     applyMiddleware(logger)
-)
+);
 
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
-registerServiceWorker();

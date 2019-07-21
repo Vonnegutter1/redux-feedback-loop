@@ -1,26 +1,42 @@
 import React, { Component } from 'react';
-// import { HashRouter as Router, Route } from 'react-router-dom';
-import Review from '../Review/Review';
+import { connect } from 'react-redux';
 
 class Comments extends Component {
 
-    nextPage = () => {
-        this.props.history.push('/Review');
+    state = {
+        comment: ''
     }
-  
+
+    handleChangeFor = (propertyName, event) => {
+        this.setState({
+
+            [propertyName]: event.target.value
+
+        })
+    }
+
+    handleSubmit = (event) => {
+        this.props.history.push('/review')
+        this.props.dispatch({
+            type: `SET_COMMENT`,
+            payload: this.state
+        })
+    }
 
     render() {
         return (
-           <>
-                <h2>Any comments you want to leave?</h2>
-                <input type="text" placeholder="Enter Comments"></input>
-
-                <button onClick={this.nextPage}>Next</button>
-                <Review />
-                
-                </>
-        ) 
+            <div>
+                <p>Care to share any comments?</p>
+                <input required type="text" size="35" placeholder="Please enter a comment"
+                    onChange={(event) => this.handleChangeFor('comment', event)}></input>
+                <button onClick={this.handleSubmit}>Submit comment</button>
+            </div>
+        )
     }
+
 }
 
-export default Comments;
+
+
+
+export default connect()(Comments);

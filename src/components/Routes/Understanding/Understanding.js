@@ -1,31 +1,53 @@
 import React, { Component } from 'react';
-// import { HashRouter as Router, Route } from 'react-router-dom';
-import Review from '../Review/Review';
+import { connect } from 'react-redux';
 
 class Understanding extends Component {
 
-    nextPage = () => {
-        this.props.history.push('/Supported');
+    state = { understanding: 0 }
+
+    handleChangeFor = (propertyName, event) => {
+        this.setState({
+
+            [propertyName]: event.target.value
+
+        })
     }
 
+    handleSubmit = (event) => {
+        this.props.history.push('/support')
+        this.props.dispatch({
+            type: `SET_UNDERSTANDING`,
+            payload: this.state
+        })
+    }
 
     render() {
         return (
-            <>
-            <form>
-                <h2>How well are you understanding the content?</h2>
-                <h4>Understanding?</h4>
-                
-                <input type="number" onChange={(event) => this.handleChangeFor('feeling', event)} />
-
-
-                <button onClick={this.nextPage}>Next</button>
-                <Review />
-                </form>
-
-            </>
+            <div>
+                <p>How are you feeling? 1 being terrible; 5 being fantastic.</p>
+                <input type="radio" name="feedback" value="1"
+                    onChange={(event) => this.handleChangeFor('understanding', event)} />1
+                <br />
+                <input type="radio" name="feedback" value="2"
+                    onChange={(event) => this.handleChangeFor('understanding', event)} />2
+                <br />
+                <input type="radio" name="feedback" value="3"
+                    onChange={(event) => this.handleChangeFor('understanding', event)} />3
+                <br />
+                <input type="radio" name="feedback" value="4"
+                    onChange={(event) => this.handleChangeFor('understanding', event)} />4
+                <br />
+                <input type="radio" name="feedback" value="5"
+                    onChange={(event) => this.handleChangeFor('understanding', event)} />5
+                <br />
+                <button onClick={this.handleSubmit}>Next</button>
+            </div>
         )
     }
+
 }
 
-export default Understanding;
+
+
+
+export default connect()(Understanding);
